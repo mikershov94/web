@@ -10,6 +10,6 @@ def wsgi_app(environ, start_response):
 	start_response(status, headers)
 	return body
 
-	#Gunicorn config
-	bind = '0.0.0.0:8000'
+#Gunicorn config
+bind = '0.0.0.0:8000'
 		
