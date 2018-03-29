@@ -11,5 +11,5 @@ def wsgi_app(environ, start_response):
 	return body
 
 #Gunicorn config
-bind = '0.0.0.0:8000'
+bind = '0.0.0.0:8080'
 		
