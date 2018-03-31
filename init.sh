@@ -9,6 +9,6 @@ sudo gunicorn -c hello.py hello:wsgi_app &
 sudo gunicorn -c /home/box/web/etc/ask_gunicorn_conf.py ask.wsgi:application &
 sudo /etc/init.d/mysql start
 sudo mysql -u root -e "create database db_ask"
-python /home/box/web/ask/manage.py makemigrations qa #заменить на migrate!!!!!!!
+sudo python /home/box/web/ask/manage.py makemigrations qa #заменить на migrate!!!!!!!
 git config --global user.email "ershovme@gmail.com"
 git config --global user.name "mikershov94"
