@@ -1,6 +1,6 @@
 from qa.views import test
 
-urlpatterns = patterns('qa.views',
+urlpatterns = [
 	url(r'^', test),
 	url(r'^login/', test),
 	url(r'^signup/', test),
@@ -8,4 +8,4 @@ urlpatterns = patterns('qa.views',
 	url(r'^ask/', test),
 	url(r'^popular/', test),
 	url(r'^new/', test),
-)
+]
