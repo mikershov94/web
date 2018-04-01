@@ -12,6 +12,7 @@ sudo mysql -u root -e "CREATE DATABASE db_ask"
 sudo mysql -u root -e "CREATE USER ask_user@localhost IDENTIFIED BY '12345678'"
 sudo mysql -u root -e "GRANT ALL PRIVILEGES ON db_ask.* TO ask_user@localhost"
 sudo mysql -u root -e "FLUSH PRIVILEGES"
-sudo python /home/box/web/ask/manage.py makemigrations qa #заменить на migrate!!!!!!!
+sudo python /home/box/web/ask/manage.py makemigrations qa
+sudo python /home/box/web/ask/manage.py migrate
 git config --global user.email "ershovme@gmail.com"
 git config --global user.name "mikershov94"
