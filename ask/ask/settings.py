@@ -78,9 +78,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_ask',
-        'USER': 'ask_user',
-        'PASSWORD': '12345678',
-        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
         'PORT': '',
     }
 }
