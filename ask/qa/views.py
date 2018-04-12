@@ -55,7 +55,7 @@ def question_details(request, slug):
 		answers = question.answers.all()
 	except Answer.DoesNotExist:
 		answers = None
-	return render(request, 'qa/question_details.html'
+	return render(request, 'qa/question_details.html',
 		{
 		'question': question,
 		'answers': answers,
