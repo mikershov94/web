@@ -6,7 +6,7 @@ from qa.models import Question, Answer
 # Create your views here.
 def test(request, *args, **kwargs):
 	return HttpResponse('OK')
-	
+
 def paginate(request, queryset):
 	try:
 		limit = int(request.GET.get('limit', 10))
@@ -31,7 +31,7 @@ def question_list_new(request):
 	page = request.GET.get('page', 1)
 	paginator = paginate(questions, 10)
 	page = paginator.page(page)
-	return render(request, 'qa/index.html',
+	return render(request, 'qa/templates/index.html',
 		{
 			'questions': page.object_list,
 			'paginator': paginator,
@@ -43,7 +43,7 @@ def question_popular(request):
 	page = request.GET.get('page', 1)
 	paginator = paginate(questions, 10)
 	page = paginator.page(page)
-	return render(request, 'qa/popular.html',
+	return render(request, 'qa/templates/popular.html',
 		{
 			'questions': page.object_list,
 			'paginator': paginator,
@@ -56,7 +56,7 @@ def question_details(request, slug):
 		answers = question.answers.all()
 	except Answer.DoesNotExist:
 		answers = None
-	return render(request, 'qa/question_details.html',
+	return render(request, 'qa/templates/question_details.html',
 		{
 		'question': question,
 		'answers': answers,
