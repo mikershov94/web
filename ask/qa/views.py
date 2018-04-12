@@ -8,20 +8,20 @@ from qa.models import Question, Answer
 	#return HttpResponse('OK')
 def paginate(request, queryset):
 	try:
-		limit = int(request.GET.get('limit', 10)) #достаем limit из URL. Он всегда целочисленный. По умолчанию 10.
+		limit = int(request.GET.get('limit', 10))
 	except ValueError:
 		limit = 10
 	if limit > 100:
-		limit = 10 #limit не должен быть больше 100
+		limit = 10 
 	try:
-		page = int(request.GET.get('page', 1)) #номер страницы всегда целочислен. Достаем из URL
+		page = int(request.GET.get('page', 1)) 
 	except ValueError:
 		raise Http404
-	paginator = Paginator(queryset, limit) #создаем объект paginator
+	paginator = Paginator(queryset, limit) 
 	try:
-		page = paginator.page(page) #устанавливаем запрашиваемую страницу
+		page = paginator.page(page)
 	except EmptyPage:
-		page = paginator.page(paginator.num_pages) #если ее нет, то отправляем последнюю
+		page = paginator.page(paginator.num_pages)
 	return page
 
 
