@@ -4,8 +4,9 @@ from django.core.paginator import Paginator
 from qa.models import Question, Answer
 
 # Create your views here.
-#def test(request, *args, **kwargs):
-	#return HttpResponse('OK')
+def test(request, *args, **kwargs):
+	return HttpResponse('OK')
+	
 def paginate(request, queryset):
 	try:
 		limit = int(request.GET.get('limit', 10))
