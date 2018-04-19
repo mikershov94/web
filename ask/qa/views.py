@@ -16,7 +16,7 @@ def paginate(request, queryset):
 		limit = 10 
 	try:
 		page = int(request.GET.get('page', 1)) 
-	except ValueError:
+	except AttributeError:
 		raise Http404
 	paginator = Paginator(queryset, limit) 
 	try:
