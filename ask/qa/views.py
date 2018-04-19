@@ -10,7 +10,7 @@ def test(request, *args, **kwargs):
 def paginate(request, queryset):
 	try:
 		limit = int(request.GET.get('limit', 10))
-	except ValueError:
+	except AttributeError:
 		limit = 10
 	if limit > 100:
 		limit = 10 
