@@ -31,7 +31,7 @@ def question_list_new(request):
 	page = request.GET.get('page', 1)
 	paginator = paginate(questions, 10)
 	page = paginator.page(page)
-	return render(request, 'qa/templates/index.html',
+	return render(request, 'qa/templates/news.html',
 		{
 			'questions': page.object_list,
 			'paginator': paginator,
