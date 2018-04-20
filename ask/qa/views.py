@@ -15,12 +15,15 @@ def paginate(request, queryset):
 	if limit > 100:
 		limit = 10 
 	try:
-		page = int(request.GET.get('page', 1)) 
+		numpage = int(request.GET.get('page', 1)) 
 	except ValueError:
 		raise Http404
 	paginator = Paginator(queryset, limit) 
+	return paginator
+	
+def last_page(paginator)
 	try:
-		page = paginator.page(page)
+		page = paginator.page(numpage)
 	except EmptyPage:
 		page = paginator.page(paginator.num_pages)
 	return page
@@ -28,9 +31,8 @@ def paginate(request, queryset):
 
 def question_list_new(request):
 	questions = Question.objects.new()
-	page = request.GET.get('page', 1)
 	paginator = paginate(request, questions)
-	page = paginator.page(page)
+	page = last_page(paginator)
 	return render(request, '/home/box/web/ask/qa/templates/news.html',
 		{
 			'questions': page.object_list,
@@ -40,9 +42,8 @@ def question_list_new(request):
 
 def question_popular(request):
 	questions = Question.objects.popular()
-	page = request.GET.get('page', 1)
 	paginator = paginate(request, questions)
-	page = paginator.page(page)
+	page = last_page(paginator)
 	return render(request, '/home/box/web/ask/qa/templates/popular.html',
 		{
 			'questions': page.object_list,
