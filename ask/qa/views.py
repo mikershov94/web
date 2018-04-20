@@ -7,7 +7,7 @@ from qa.models import Question, Answer
 def test(request, *args, **kwargs):
 	return HttpResponse('OK')
 
-def paginate(request, queryset, numpage):
+def paginate(request, queryset):
 	try:
 		limit = int(request.GET.get('limit', 10))
 	except ValueError:
@@ -20,7 +20,7 @@ def paginate(request, queryset, numpage):
 		raise Http404
 	paginator = Paginator(queryset, limit) 
 	try:
-		page = paginator.page(numpage)
+		page = paginator.page(page)
 	except EmptyPage:
 		page = paginator.page(paginator.num_pages)
 	return page
@@ -28,8 +28,9 @@ def paginate(request, queryset, numpage):
 
 def question_list_new(request):
 	questions = Question.objects.new()
-	numpage = request.GET.get('page', 1)
-	paginator = paginate(request, questions, numpage)
+	page = request.GET.get('page', 1)
+	paginator = paginate(request, questions)
+	page = paginator.page(page)
 	return render(request, '/home/box/web/ask/qa/templates/news.html',
 		{
 			'questions': page.object_list,
@@ -39,8 +40,9 @@ def question_list_new(request):
 
 def question_popular(request):
 	questions = Question.objects.popular()
-	numpage = request.GET.get('page', 1)
-	paginator = paginate(request, questions, numpage)
+	page = request.GET.get('page', 1)
+	paginator = paginate(request, questions)
+	page = paginator.page(page)
 	return render(request, '/home/box/web/ask/qa/templates/popular.html',
 		{
 			'questions': page.object_list,
