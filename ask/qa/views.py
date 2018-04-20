@@ -14,14 +14,14 @@ def paginate(request, queryset):
 		limit = 10
 	if limit > 100:
 		limit = 10 
-	try:
-		numpage = int(request.GET.get('page', 1)) 
-	except ValueError:
-		raise Http404
 	paginator = Paginator(queryset, limit) 
 	return paginator
 	
 def last_page(paginator):
+	try:
+		numpage = int(request.GET.get('page', 1)) 
+	except ValueError:
+		raise Http404
 	try:
 		page = paginator.page(numpage)
 	except EmptyPage:
