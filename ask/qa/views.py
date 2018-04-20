@@ -21,7 +21,7 @@ def paginate(request, queryset):
 	paginator = Paginator(queryset, limit) 
 	return paginator
 	
-def last_page(paginator)
+def last_page(paginator):
 	try:
 		page = paginator.page(numpage)
 	except EmptyPage:
