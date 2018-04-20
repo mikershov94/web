@@ -10,13 +10,13 @@ def test(request, *args, **kwargs):
 def paginate(request, queryset):
 	try:
 		limit = int(request.GET.get('limit', 10))
-	except AttributeError:
+	except ValueError:
 		limit = 10
 	if limit > 100:
 		limit = 10 
 	try:
 		page = int(request.GET.get('page', 1)) 
-	except AttributeError:
+	except ValueError:
 		raise Http404
 	paginator = Paginator(queryset, limit) 
 	try:
@@ -29,7 +29,7 @@ def paginate(request, queryset):
 def question_list_new(request):
 	questions = Question.objects.new()
 	page = request.GET.get('page', 1)
-	paginator = paginate(questions, 10)
+	paginator = paginate(request, questions)
 	page = paginator.page(page)
 	return render(request, '/home/box/web/ask/qa/templates/news.html',
 		{
@@ -41,7 +41,7 @@ def question_list_new(request):
 def question_popular(request):
 	questions = Question.objects.popular()
 	page = request.GET.get('page', 1)
-	paginator = paginate(questions, 10)
+	paginator = paginate(request, questions)
 	page = paginator.page(page)
 	return render(request, '/home/box/web/ask/qa/templates/popular.html',
 		{
