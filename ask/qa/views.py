@@ -32,6 +32,7 @@ def last_page(request, paginator):
 def question_list_new(request):
 	questions = Question.objects.new()
 	paginator = paginate(request, questions)
+	paginator.baseurl = '/?page='
 	page = last_page(request, paginator)
 	return render(request, '/home/box/web/ask/qa/templates/news.html',
 		{
@@ -43,6 +44,7 @@ def question_list_new(request):
 def question_popular(request):
 	questions = Question.objects.popular()
 	paginator = paginate(request, questions)
+	paginator.baseurl = '/popular/?page='
 	page = last_page(request, paginator)
 	return render(request, '/home/box/web/ask/qa/templates/popular.html',
 		{
