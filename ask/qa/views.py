@@ -17,7 +17,7 @@ def paginate(request, queryset):
 	paginator = Paginator(queryset, limit) 
 	return paginator
 	
-def last_page(paginator):
+def last_page(request, paginator):
 	try:
 		numpage = int(request.GET.get('page', 1)) 
 	except ValueError:
@@ -32,7 +32,7 @@ def last_page(paginator):
 def question_list_new(request):
 	questions = Question.objects.new()
 	paginator = paginate(request, questions)
-	page = last_page(paginator)
+	page = last_page(request, paginator)
 	return render(request, '/home/box/web/ask/qa/templates/news.html',
 		{
 			'questions': page.object_list,
@@ -43,7 +43,7 @@ def question_list_new(request):
 def question_popular(request):
 	questions = Question.objects.popular()
 	paginator = paginate(request, questions)
-	page = last_page(paginator)
+	page = last_page(request, paginator)
 	return render(request, '/home/box/web/ask/qa/templates/popular.html',
 		{
 			'questions': page.object_list,
