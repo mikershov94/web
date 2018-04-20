@@ -30,7 +30,6 @@ def question_list_new(request):
 	questions = Question.objects.new()
 	page = request.GET.get('page', 1)
 	paginator = paginate(request, questions)
-	page = paginator.page(page)
 	return render(request, '/home/box/web/ask/qa/templates/news.html',
 		{
 			'questions': page.object_list,
@@ -42,7 +41,6 @@ def question_popular(request):
 	questions = Question.objects.popular()
 	page = request.GET.get('page', 1)
 	paginator = paginate(request, questions)
-	page = paginator.page(page)
 	return render(request, '/home/box/web/ask/qa/templates/popular.html',
 		{
 			'questions': page.object_list,
