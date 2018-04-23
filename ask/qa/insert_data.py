@@ -1,11 +1,11 @@
 from qa.models import Question, Answer
 from django.contrib.auth.models import User, UserManager
 
-u1 = UserManager.create_user(John, email = 'john@qa.com', password = '')
-u2 = UserManager.create_user(Bill, email = 'bill@qa.com', password = '')
-u3 = UserManager.create_user(Jane, email = 'jane@qa.com', password = '')
-u4 = UserManager.create_user(Helen, email = 'helen@qa.com', password = '')
-u5 = UserManager.create_user(Patrick, email = 'pat@qa.com', password = '')
+u1 = User.objects.create_user(username = 'John', email = 'john@qa.com', password = '')
+u2 = User.objects.create_user(username = 'Bill', email = 'bill@qa.com', password = '')
+u3 = User.objects.create_user(username = 'Jane', email = 'jane@qa.com', password = '')
+u4 = User.objects.create_user(username = 'Helen', email = 'helen@qa.com', password = '')
+u5 = User.objects.create_user(username = 'Patrick', email = 'pat@qa.com', password = '')
 
 q1 = Question.objects.create(
 		title = 'Computer',
