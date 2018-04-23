@@ -2,10 +2,15 @@ from qa.models import Question, Answer
 from django.contrib.auth.models import User, UserManager
 
 u1 = User.objects.create_user(username = 'John', email = 'john@qa.com', password = '')
+u1.save()
 u2 = User.objects.create_user(username = 'Bill', email = 'bill@qa.com', password = '')
+u2.save()
 u3 = User.objects.create_user(username = 'Jane', email = 'jane@qa.com', password = '')
+u3.save()
 u4 = User.objects.create_user(username = 'Helen', email = 'helen@qa.com', password = '')
+u4.save()
 u5 = User.objects.create_user(username = 'Patrick', email = 'pat@qa.com', password = '')
+u5.save()
 
 q1 = Question.objects.create(
 		title = 'Computer',
