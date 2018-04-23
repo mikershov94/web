@@ -139,17 +139,17 @@ a2 = Answer.objects.create(
 		author = u1,
 	)
 a3 = Answer.objects.create(
-		text = 'simple',
+		text = "i don't know",
 		question = q1,
 		author = u1,
 	)
 a4 = Answer.objects.create(
-		text = 'simple',
+		text = 'hard',
 		question = q1,
 		author = u1,
 	)
 a5 = Answer.objects.create(
-		text = 'simple',
+		text = 'middle',
 		question = q1,
 		author = u1,
 	)
@@ -164,7 +164,7 @@ a7 = Answer.objects.create(
 		author = u1,
 	)
 a8 = Answer.objects.create(
-		text = 'simple',
+		text = 'middle',
 		question = q1,
 		author = u1,
 	)
@@ -174,32 +174,32 @@ a9 = Answer.objects.create(
 		author = u1,
 	)
 a10 = Answer.objects.create(
-		text = 'simple',
+		text = 'hard',
 		question = q1,
 		author = u1,
 	)
 a11 = Answer.objects.create(
-		text = 'simple',
+		text = 'yes',
 		question = q1,
 		author = u1,
 	)
 a12 = Answer.objects.create(
-		text = 'simple',
+		text = 'yes',
 		question = q1,
 		author = u1,
 	)
 a13 = Answer.objects.create(
-		text = 'simple',
+		text = 'heroes',
 		question = q1,
 		author = u1,
 	)
 a14 = Answer.objects.create(
-		text = 'simple',
+		text = 'middle',
 		question = q1,
 		author = u1,
 	)
 a15 = Answer.objects.create(
-		text = 'simple',
+		text = 'this is notes',
 		question = q1,
 		author = u1,
 	)
@@ -209,22 +209,22 @@ a16 = Answer.objects.create(
 		author = u1,
 	)
 a17 = Answer.objects.create(
-		text = 'simple',
+		text = 'yes',
 		question = q1,
 		author = u1,
 	)
 a18 = Answer.objects.create(
-		text = 'simple',
+		text = 'yes',
 		question = q1,
 		author = u1,
 	)
 a19 = Answer.objects.create(
-		text = 'simple',
+		text = 'mike',
 		question = q1,
 		author = u1,
 	)
 a20 = Answer.objects.create(
-		text = 'simple',
+		text = 'kassa',
 		question = q1,
 		author = u1,
 	)
