@@ -135,96 +135,96 @@ a1 = Answer.objects.create(
 	)
 a2 = Answer.objects.create(
 		text = 'simple',
-		question = q1,
-		author = u1,
+		question = q2,
+		author = u2,
 	)
 a3 = Answer.objects.create(
 		text = "i don't know",
-		question = q1,
-		author = u1,
+		question = q3,
+		author = u3,
 	)
 a4 = Answer.objects.create(
 		text = 'hard',
-		question = q1,
-		author = u1,
+		question = q4,
+		author = u4,
 	)
 a5 = Answer.objects.create(
 		text = 'middle',
-		question = q1,
-		author = u1,
+		question = q5,
+		author = u5,
 	)
 a6 = Answer.objects.create(
 		text = 'simple',
-		question = q1,
+		question = q6,
 		author = u1,
 	)
 a7 = Answer.objects.create(
 		text = 'simple',
-		question = q1,
-		author = u1,
+		question = q7,
+		author = u2,
 	)
 a8 = Answer.objects.create(
 		text = 'middle',
-		question = q1,
-		author = u1,
+		question = q8,
+		author = u3,
 	)
 a9 = Answer.objects.create(
 		text = 'simple',
-		question = q1,
-		author = u1,
+		question = q9,
+		author = u4,
 	)
 a10 = Answer.objects.create(
 		text = 'hard',
-		question = q1,
-		author = u1,
+		question = q10,
+		author = u5,
 	)
 a11 = Answer.objects.create(
 		text = 'yes',
-		question = q1,
+		question = q11,
 		author = u1,
 	)
 a12 = Answer.objects.create(
 		text = 'yes',
-		question = q1,
-		author = u1,
+		question = q12,
+		author = u2,
 	)
 a13 = Answer.objects.create(
 		text = 'heroes',
-		question = q1,
-		author = u1,
+		question = q13,
+		author = u3,
 	)
 a14 = Answer.objects.create(
 		text = 'middle',
-		question = q1,
-		author = u1,
+		question = q14,
+		author = u4,
 	)
 a15 = Answer.objects.create(
 		text = 'this is notes',
-		question = q1,
-		author = u1,
+		question = q15,
+		author = u5,
 	)
 a16 = Answer.objects.create(
 		text = 'simple',
-		question = q1,
+		question = q16,
 		author = u1,
 	)
 a17 = Answer.objects.create(
 		text = 'yes',
-		question = q1,
-		author = u1,
+		question = q17,
+		author = u2,
 	)
 a18 = Answer.objects.create(
 		text = 'yes',
-		question = q1,
-		author = u1,
+		question = q18,
+		author = u3,
 	)
 a19 = Answer.objects.create(
 		text = 'mike',
-		question = q1,
-		author = u1,
+		question = q19,
+		author = u4,
 	)
 a20 = Answer.objects.create(
 		text = 'kassa',
-		question = q1,
-		author = u1,
+		question = q20,
+		author = u5,
 	)
