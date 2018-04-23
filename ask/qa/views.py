@@ -34,7 +34,7 @@ def question_list_new(request):
 	paginator = paginate(request, questions)
 	paginator.baseurl = '/?page='
 	page = last_page(request, paginator)
-	return render(request, '/home/box/web/ask/qa/templates/news.html',
+	return render(request, 'templates/news.html',
 		{
 			'questions': page.object_list,
 			'paginator': paginator,
@@ -46,7 +46,7 @@ def question_popular(request):
 	paginator = paginate(request, questions)
 	paginator.baseurl = '/popular/?page='
 	page = last_page(request, paginator)
-	return render(request, '/home/box/web/ask/qa/templates/popular.html',
+	return render(request, 'templates/popular.html',
 		{
 			'questions': page.object_list,
 			'paginator': paginator,
@@ -59,7 +59,7 @@ def question_details(request, slug):
 		answers = question.answers.all()
 	except Answer.DoesNotExist:
 		answers = None
-	return render(request, '/home/box/web/ask/qa/templates/question_details.html',
+	return render(request, 'templates/question_details.html',
 		{
 		'question': question,
 		'answers': answers,
