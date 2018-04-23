@@ -127,3 +127,104 @@ q20 = Question.objects.create(
 		rating = 9,
 		author = u5,
 	)
+
+a1 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a2 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a3 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a4 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a5 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a6 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a7 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a8 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a9 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a10 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a11 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a12 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a13 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a14 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a15 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a16 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a17 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a18 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a19 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
+a20 = Answer.objects.create(
+		text = 'simple',
+		question = q1,
+		author = u1,
+	)
