@@ -20,8 +20,17 @@ class Question(models.Model):
 	author = models.ForeignKey(User)
 	likes = models.ManyToManyField(User, related_name='likes_set')
 
+	def __unicode__(self):
+		return self.title
+
+	def get_url(self):
+		return reverse('question', kwargs={'id': self.id})
+
 class Answer(models.Model):
 	text = models.TextField()
 	added_at = models.DateTimeField(auto_now_add=True)
 	question = models.ForeignKey(Question)
-	author = models.ForeignKey(User)	
+	author = models.ForeignKey(User)
+
+	def __unicode__(self):
+		return self.title	
