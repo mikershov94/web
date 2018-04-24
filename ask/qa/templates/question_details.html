@@ -6,5 +6,7 @@
 {% block content %}
 	<p>{{question.title}}<p>
 	<p>{{question.text}}<p>
-	<p>{{answers}}<p>
+	{% for a in answers %}
+		<p>{{a.text}}</p>
+	{% endfor %}
 {% endblock content %}
