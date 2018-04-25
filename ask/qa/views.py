@@ -53,8 +53,11 @@ def question_popular(request):
 			'page': page,
 		})
 
-def question_details(request, slug):
-	question = get_object_or_404(Question, slug=slug)
+def question_details(request, question_id):
+	try:
+		question = Question.objects.get(id=question_id)
+	except Question.DoesNotExist:
+		raise Http404
 	try:
 		answers = question.answers.all()
 	except Answer.DoesNotExist:
