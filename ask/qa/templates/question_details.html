@@ -13,6 +13,7 @@
 		<div>{{e}}</div>
 	{% endfor %}
 	<form method="post", action="/question/{{question.id}}/">
+		{% csrf_token %}
 		<fieldset>
 			<div>
 				{% for field in form %}
