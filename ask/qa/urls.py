@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from qa import views
+from qa.views import test, question_list_new, question_details, question_popular, question_add
 
 urlpatterns = [
 	url(r'^$', question_list_new),
