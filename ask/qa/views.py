@@ -78,7 +78,7 @@ def question_add(request):
 			return HttpResponseRedirect(url)
 	else:
 		form = AskForm()
-	return render(request, 'templates/question_add.html',
+	return render(request, 'templates/ask.html',
 		{
 			'form': form,
 		})
