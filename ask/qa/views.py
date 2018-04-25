@@ -59,7 +59,7 @@ def question_details(request, question_id):
 	except Question.DoesNotExist:
 		raise Http404
 	try:
-		answers = question.answers.all()
+		answers = Answer.objects.filter(question = question)
 	except Answer.DoesNotExist:
 		answers = None
 	return render(request, 'templates/question_details.html',
