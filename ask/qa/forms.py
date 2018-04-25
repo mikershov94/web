@@ -5,3 +5,7 @@ class AskForm(forms.ModelForm):
 		model = Question
 		fields = ['title', 'text']
 
+class AnswerForm(forms.ModelForm):
+    class Meta:
+        model = Answer
+        fields = ['text', 'question']
