@@ -11,8 +11,9 @@ class AskForm(forms.ModelForm):
 			raise forms.ValidationError(u'This is spam', code='spam') 
 
 class AnswerForm(forms.ModelForm):
-    text = forms.CharField(widget=forms.TextArea)
-    question = forms.CharField()
+    class Meta:
+		model = Answer
+		fields = ['text', 'question']
 
     def clean(self):
 		if is_spam(self.cleaned_data):
