@@ -4,8 +4,7 @@ from qa.models import Question, Answer
 class AskForm(forms.ModelForm):
 	class Meta:
 		model = Question
-		fields = ['title']
-	text = forms.CharField(widget=forms.TextArea)
+		fields = ['title', 'text']
 
 	def clean(self):
 		if is_spam(self.cleaned_data):
