@@ -8,7 +8,7 @@ class AskForm(forms.ModelForm):
 
 	def clean(self):
 		if is_spam(self.cleaned_data):
-			raise forms.ValidationError(u'Сообщение похоже на спам', code='spam') 
+			raise forms.ValidationError(u'This is spam', code='spam') 
 
 class AnswerForm(forms.ModelForm):
     text = forms.CharField(widget=forms.TextArea)
@@ -16,4 +16,4 @@ class AnswerForm(forms.ModelForm):
 
     def clean(self):
 		if is_spam(self.cleaned_data):
-			raise forms.ValidationError(u'Сообщение похоже на спам', code='spam') 
+			raise forms.ValidationError(u'This is spam', code='spam') 
