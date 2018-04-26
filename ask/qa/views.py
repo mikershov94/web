@@ -78,10 +78,10 @@ def question_add(request):
 			return HttpResponseRedirect(url)
 	else:
 		form = AskForm()
-	return render(request, 'templates/ask.html',
-		{
-			'form': form,
-		})
+		return render(request, 'templates/ask.html',
+			{
+				'form': form,
+			})
 
 def answer_add(request):
 	question = Question.objects.get(id=question_id)
@@ -93,7 +93,7 @@ def answer_add(request):
 			return HttpResponseRedirect(url)
 	else:
 		form = AnswerForm()
-	return render(request, 'templates/question_details.html',
-		{
-			'form': form,
-		})
+		return render(request, 'templates/question_details.html',
+			{
+				'form': form,
+			})
