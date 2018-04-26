@@ -7,7 +7,7 @@ class AskForm(forms.ModelForm):
 		fields = ['title', 'text']
 
 	def clean(self):
-		if is_spam(self.cleaned_data):
+		if forms.is_spam(self.cleaned_data):
 			raise forms.ValidationError(u'This is spam', code='spam') 
 
 class AnswerForm(forms.ModelForm):
@@ -16,5 +16,5 @@ class AnswerForm(forms.ModelForm):
     	fields = ['text', 'question']
 
     def clean(self):
-    	if is_spam(self.cleaned_data):
+    	if forms.is_spam(self.cleaned_data):
     		raise forms.ValidationError(u'This is spam', code='spam') 
