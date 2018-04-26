@@ -18,17 +18,9 @@ def is_answer(cleaned_data):
 class AskForm(forms.ModelForm):
 	class Meta:
 		model = Question
-		fields = ['title', 'text', 'author']
-
-	def clean(self):
-		if not is_ask(self.cleaned_data):
-			raise forms.ValidationError(u'This is not ask', code='12') 
+		fields = ['title', 'text', 'author'] 
 
 class AnswerForm(forms.ModelForm):
     class Meta:
     	model = Answer
-    	fields = ['text', 'question', 'author']
-
-    def clean(self):
-    	if not is_answer(self.cleaned_data):
-    		raise forms.ValidationError(u'This is not answer', code='12') 
+    	fields = ['text', 'question', 'author'] 
