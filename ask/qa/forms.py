@@ -18,7 +18,7 @@ def is_answer(cleaned_data):
 class AskForm(forms.ModelForm):
 	class Meta:
 		model = Question
-		fields = ['title', 'text']
+		fields = ['title', 'text', 'author']
 
 	def clean(self):
 		if not is_ask(self.cleaned_data):
@@ -27,7 +27,7 @@ class AskForm(forms.ModelForm):
 class AnswerForm(forms.ModelForm):
     class Meta:
     	model = Answer
-    	fields = ['text', 'question']
+    	fields = ['text', 'question', 'author']
 
     def clean(self):
     	if not is_answer(self.cleaned_data):
