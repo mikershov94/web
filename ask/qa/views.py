@@ -78,6 +78,7 @@ def question_add(request):
 			url = question.get_url()
 			return HttpResponseRedirect(url)
 		print("False")
+		print(form.errors)
 	else:
 		form = AskForm()
 	return render(request, 'templates/ask.html',
