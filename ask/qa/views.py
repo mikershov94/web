@@ -72,6 +72,7 @@ def question_details(request, question_id):
 def question_add(request):
 	if request.method == 'POST':
 		form = AskForm(request.POST)
+		form.author = 000000
 		if form.is_valid():
 			print("True")
 			question = form.save()
