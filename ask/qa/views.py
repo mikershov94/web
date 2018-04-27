@@ -72,10 +72,12 @@ def question_details(request, question_id):
 def question_add(request):
 	if request.method == 'POST':
 		form = AskForm(request.POST)
-		
-		question = form.save()
-		url = question.get_url()
-		return HttpResponseRedirect(url)
+		if form.is_valid():
+			print("True")
+			question = form.save()
+			url = question.get_url()
+			return HttpResponseRedirect(url)
+		print("False")
 	else:
 		form = AskForm()
 	return render(request, 'templates/ask.html',
