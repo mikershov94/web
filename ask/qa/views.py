@@ -73,8 +73,8 @@ def question_add(request):
 	if request.method == 'POST':
 		form = AskForm(request.POST)
 		if form.is_valid():
-			print("True")
 			question = form.save()
+			print("True")
 			url = question.get_url()
 			return HttpResponseRedirect(url)
 		print("False")
