@@ -72,10 +72,10 @@ def question_details(request, question_id):
 def question_add(request):
 	if request.method == 'POST':
 		form = AskForm(request.POST)
-		if form.is_valid():
-			question = form.save()
-			url = question.get_url()
-			return HttpResponseRedirect(url)
+		
+		question = form.save()
+		url = question.get_url()
+		return HttpResponseRedirect(url)
 	else:
 		form = AskForm()
 	return render(request, 'templates/ask.html',
@@ -83,7 +83,7 @@ def question_add(request):
 			'form': form,
 		})
 
-def answer_add(request):
+def answer_add(request, question_id):
 	question = Question.objects.get(id=question_id)
 	if request.method == 'POST':
 		form = AnswerForm(request.POST)
