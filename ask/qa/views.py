@@ -3,6 +3,8 @@ from django.http import HttpResponse, Http404
 from django.core.paginator import Paginator
 from qa.models import Question, Answer
 from qa.forms import AskForm, AnswerForm
+from django.core.urlresolvers import reverse
+
 
 # Create your views here.
 def test(request, *args, **kwargs):
