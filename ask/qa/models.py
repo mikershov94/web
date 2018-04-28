@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from qa.views import question_details
 
 # Create your models here.
 class QuestionManager(models.Manager):
@@ -25,7 +26,7 @@ class Question(models.Model):
 		return self.title
 
 	def get_url(self):
-		return reverse('question_details', kwargs={'id': self.id})
+		return reverse(question_details, args=[self.id])
 
 class Answer(models.Model):
 	text = models.TextField()
