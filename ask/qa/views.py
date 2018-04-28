@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.core.paginator import Paginator
 from qa.models import Question, Answer
 from qa.forms import AskForm, AnswerForm
