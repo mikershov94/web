@@ -75,8 +75,7 @@ def question_add(request):
 		if form.is_valid():
 			question = form.save()
 			print("True")
-			url = question.get_url()
-			return HttpResponseRedirect(url)
+			return HttpResponseRedirect(reverse(question_details, args=[question.id]))
 		print("False")
 		print(form.errors)
 	else:
