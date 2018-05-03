@@ -76,10 +76,7 @@ def question_add(request):
 		form = AskForm(request.POST)
 		if form.is_valid():
 			question = form.save()
-			print("True")
 			return HttpResponseRedirect(reverse(question_details, args=[question.id]))
-		print("False")
-		print(form.errors)
 	else:
 		form = AskForm()
 	return render(request, 'templates/ask.html',
@@ -101,3 +98,5 @@ def answer_add(request, question_id):
 		{
 			'form': form,
 		})
+
+def user_add(request):
