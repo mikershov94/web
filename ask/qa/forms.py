@@ -27,3 +27,10 @@ class AnswerForm(forms.ModelForm):
     	fields = ['text']
 
     question = forms.IntegerField() 
+
+class SignupForm(forms.ModelForm):
+	class Meta:
+		model = User
+		fields = ['username', 'email', 'password']
+
+
