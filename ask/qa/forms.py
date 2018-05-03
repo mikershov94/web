@@ -1,5 +1,6 @@
 from django import forms
 from qa.models import Question, Answer
+from django.contrib.auth.models import User
 
 def is_ask(cleaned_data):
 	text = cleaned_data['text']
