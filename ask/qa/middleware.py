@@ -1,5 +1,5 @@
 from django.utils.deprecation import MiddlewareMixin
-from django.contrib.models import Session
+from django.contrib.sessions.models import Session
 
 class CheckSessionMiddleware(MiddlewareMixin):
 	def process_request(request):

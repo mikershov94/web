@@ -5,7 +5,7 @@ from qa.models import Question, Answer
 from qa.helper import do_login
 from qa.forms import AskForm, AnswerForm, SignupForm
 from django.core.urlresolvers import reverse
-from django.contrib.models import Session
+from django.contrib.sessions.models import Session
 
 
 

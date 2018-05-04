@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.contrib.models import Session
+from django.contrib.sessions.models import Session
 import random
 
 def do_login(login, password):
