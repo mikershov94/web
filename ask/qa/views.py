@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.models import Session
 
 
+
 # Create your views here.
 def test(request, *args, **kwargs):
 	return HttpResponse('OK')
@@ -105,4 +106,5 @@ def user_add(request):
 		form = SignupForm(request.POST)
 		if form.is_valid():
 			user = form.save()
-			url = 
+			url = request.POST.get('continue', '/')
+			sessid = 
