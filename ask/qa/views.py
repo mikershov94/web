@@ -122,3 +122,20 @@ def user_add(request):
 			'form': form,
 		})
 
+def login(request):
+	error = ''
+	if request.method == 'POST':
+		login = request.POST.get('login')
+		password = request.POST.get('password')
+		url = request.POST.get('continue', '/')
+		sessid = do_login(login, password)
+		if sessid:
+			response = HttpResponseRedirect(url)
+			response.set_cookie('sessid', sessid)
+			return response
+		else:
+			error = 'Bad login or password'
+	return render(request, 'templates/login.html',
+		{
+		'error': error,
+		})

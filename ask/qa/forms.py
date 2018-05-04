@@ -34,4 +34,8 @@ class SignupForm(forms.ModelForm):
 		model = User
 		fields = ['username', 'email', 'password']
 
+class LoginForm(forms.Form):
+	login = forms.CharField()
+	password = forms.PasswordField()
+
 
