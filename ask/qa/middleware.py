@@ -10,7 +10,5 @@ class CheckSessionMiddleware(MiddlewareMixin):
 				expires__gt = datetime.now(),
 				)
 			request.session = session
-			request.user = session.user
 		except Session.DoesNotExist:
 			request.session = None
-			request.user = None
