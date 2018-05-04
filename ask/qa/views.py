@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.core.paginator import Paginator
 from qa.models import Question, Answer
+from qa.helper import do_login
 from qa.forms import AskForm, AnswerForm, SignupForm
 from django.core.urlresolvers import reverse
 from django.contrib.models import Session
@@ -105,6 +106,18 @@ def user_add(request):
 	if request.method == 'POST':
 		form = SignupForm(request.POST)
 		if form.is_valid():
+			login = form.username
+			password = form.password
 			user = form.save()
 			url = request.POST.get('continue', '/')
-			sessid = 
+			sessid = do_login(login, password)
+			if sessid:
+				response = HttpResponseRedirect(url)
+				response.set_cookie('sessid', sessid)
+				return response
+	else:
+		form = SignupForm()
+	return render(request, 'templates/registration.html',
+		{
+			'form': form,
+		})
