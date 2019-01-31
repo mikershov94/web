@@ -4,7 +4,7 @@ from django.contrib.sessions.models import Session
 class CheckSessionMiddleware(MiddlewareMixin):
 	def process_request(self, request):
 		try:
-			sessid = request.COOKIE.get('sessid')
+			sessid = request.COOKIES.get('sessid')
 			session = Session.objects.get(
 				key = sessid,
 				expires__gt = datetime.now(),
