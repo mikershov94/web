@@ -1,6 +1,7 @@
 from django.utils.deprecation import MiddlewareMixin
 from django.contrib.sessions.models import Session
 from datetime import datetime
+from django.utils import timezone
 
 class CheckSessionMiddleware(MiddlewareMixin):
 	def process_request(self, request):
@@ -8,7 +9,7 @@ class CheckSessionMiddleware(MiddlewareMixin):
 			sessid = request.COOKIES.get('sessid')
 			session = Session.objects.get(
 				session_key = sessid,
-				expire_date__gt = datetime.now(),
+				expire_date__gt = datetime.now(tz=timezone.utc),
 				)
 			request.session = session
 			request.user = session.user
