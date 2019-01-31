@@ -4,7 +4,7 @@ import random
 
 def do_login(login, password):
 	try:
-		user = User.objects.get(login=login)
+		user = User.objects.get(username=login)
 	except User.DoesNotExist:
 		return None
 
