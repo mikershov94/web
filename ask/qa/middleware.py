@@ -7,7 +7,7 @@ class CheckSessionMiddleware(MiddlewareMixin):
 		try:
 			sessid = request.COOKIES.get('sessid')
 			session = Session.objects.get(
-				key = sessid,
+				session_key = sessid,
 				expire_date__gt = datetime.now(),
 				)
 			request.session = session
