@@ -2,7 +2,7 @@ from django.utils.deprecation import MiddlewareMixin
 from django.contrib.sessions.models import Session
 
 class CheckSessionMiddleware(MiddlewareMixin):
-	def process_request(request):
+	def process_request(request, **args):
 		try:
 			sessid = request.COOKIE.get('sessid')
 			session = Session.objects.get(
