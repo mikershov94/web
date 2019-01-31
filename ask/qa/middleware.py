@@ -1,5 +1,6 @@
 from django.utils.deprecation import MiddlewareMixin
 from django.contrib.sessions.models import Session
+from datetime import datetime
 
 class CheckSessionMiddleware(MiddlewareMixin):
 	def process_request(self, request):
