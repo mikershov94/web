@@ -77,6 +77,7 @@ def question_details(request, question_id):
 def question_add(request):
 	if request.method == 'POST':
 		form = AskForm(request.POST)
+		form._user = request.user
 		if form.is_valid():
 			question = form.save()
 			return HttpResponseRedirect(reverse(question_details, args=[question.id]))
@@ -91,6 +92,7 @@ def answer_add(request, question_id):
 	question = Question.objects.get(id=question_id)
 	if request.method == 'POST':
 		form = AnswerForm(request.POST)
+		form._user = request.user
 		if form.is_valid():
 			answer = form.save()
 			url = question.get_url()
@@ -109,7 +111,7 @@ def user_add(request):
 			login = form.fields['username']
 			password = form.fields['password']
 			user = form.save()
-			url = request.POST.get('continue', '/')
+			url = '/'
 			sessid = do_login(login, password)
 			if sessid:
 				response = HttpResponseRedirect(url)
