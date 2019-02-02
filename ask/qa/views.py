@@ -126,7 +126,7 @@ def user_add(request):
 def login(request):
 	error = ''
 	if request.method == 'POST':
-		login = request.POST.get('login')
+		login = request.POST.get('username')
 		password = request.POST.get('password')
 		url = request.POST.get('continue', '/')
 		sessid = do_login(login, password)
