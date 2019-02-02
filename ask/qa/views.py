@@ -39,7 +39,7 @@ def question_list_new(request):
 	paginator = paginate(request, questions)
 	paginator.baseurl = '/?page='
 	page = last_page(request, paginator)
-	return render(request, 'templates/news.html',
+	return render(request, 'news.html',
 		{
 			'questions': page.object_list,
 			'paginator': paginator,
@@ -67,7 +67,7 @@ def question_details(request, question_id):
 		answers = Answer.objects.filter(question = question)
 	except Answer.DoesNotExist:
 		answers = None
-	return render(request, 'templates/question_details.html',
+	return render(request, 'question_details.html',
 		{
 		'question': question,
 		'answers': answers,
@@ -82,7 +82,7 @@ def question_add(request):
 			return HttpResponseRedirect(reverse(question_details, args=[question.id]))
 	else:
 		form = AskForm()
-	return render(request, 'templates/ask.html',
+	return render(request, 'ask.html',
 		{
 			'form': form,
 		})
@@ -98,7 +98,7 @@ def answer_add(request, question_id):
 			return HttpResponseRedirect(url)
 	else:
 		form = AnswerForm()
-	return render(request, 'templates/question_details.html',
+	return render(request, 'question_details.html',
 		{
 			'form': form,
 		})
@@ -118,7 +118,7 @@ def user_add(request):
 				return response
 	else:
 		form = SignupForm()
-	return render(request, 'templates/registration.html',
+	return render(request, 'registration.html',
 		{
 			'form': form,
 		})
@@ -136,7 +136,7 @@ def login(request):
 			return response
 		else:
 			error = 'Bad login or password'
-	return render(request, 'templates/login.html',
+	return render(request, 'login.html',
 		{
 		'error': error,
 		})
