@@ -110,7 +110,7 @@ def user_add(request):
 			login = form.fields['username']
 			password = form.fields['password']
 			user = form.save()
-			url = '/'
+			url = request.POST.get('continue', '/')
 			sessid = do_login(login, password)
 			if sessid:
 				response = HttpResponseRedirect(url)
