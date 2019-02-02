@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.sessions.models import Session
 
 # Create your models here.
 class QuestionManager(models.Manager):
@@ -31,3 +32,6 @@ class Answer(models.Model):
 
 	def __unicode__(self):
 		return self.title	
+
+class Session(Session):
+	user = models.ForeignKey(User, on_delete=models.DO_NOTHING)

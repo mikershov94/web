@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.contrib.sessions.models import Session
+from qa.models import Session
 import random
 
 def do_login(login, password):
@@ -12,8 +12,8 @@ def do_login(login, password):
 		return None
 
 	session = Session()
-	session.key = random.randint()
+	session.session_key = random.randint()
 	session.user = user
-	session.expires = datetime.now()+timedelta(days=5)
+	session.expire_date = datetime.now()+timedelta(days=5)
 	session.save()
-	return session.key
+	return session.session_key

@@ -5,7 +5,6 @@ from qa.models import Question, Answer
 from qa.helper import do_login
 from qa.forms import AskForm, AnswerForm, SignupForm
 from django.core.urlresolvers import reverse
-from django.contrib.sessions.models import Session
 
 
 
@@ -115,7 +114,7 @@ def user_add(request):
 			sessid = do_login(login, password)
 			if sessid:
 				response = HttpResponseRedirect(url)
-				response.set_cookie('sessid', sessid)
+				response.set_cookie('sessionid', sessid)
 				return response
 	else:
 		form = SignupForm()
@@ -133,7 +132,7 @@ def login(request):
 		sessid = do_login(login, password)
 		if sessid:
 			response = HttpResponseRedirect(url)
-			response.set_cookie('sessid', sessid)
+			response.set_cookie('sessionid', sessid)
 			return response
 		else:
 			error = 'Bad login or password'

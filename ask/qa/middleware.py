@@ -1,5 +1,5 @@
 from django.utils.deprecation import MiddlewareMixin
-from django.contrib.sessions.models import Session
+from qa.models import Session
 from datetime import datetime
 from django.utils import timezone
 
