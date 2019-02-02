@@ -12,7 +12,7 @@ def do_login(login, password):
 		return None
 
 	session = Session()
-	session.session_key = random.randint()
+	session.session_key = random.randint(1, 1597582)
 	session.user = user
 	session.expire_date = datetime.now()+timedelta(days=5)
 	session.save()
