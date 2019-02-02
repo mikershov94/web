@@ -14,5 +14,6 @@ sudo mysql -u root -e "GRANT ALL PRIVILEGES ON db_ask.* TO ask_user@localhost"
 sudo mysql -u root -e "FLUSH PRIVILEGES"
 python /home/box/web/ask/manage.py makemigrations qa
 python /home/box/web/ask/manage.py migrate
+python /home/box/web/ask/manage.py createsuperuser
 git config --global user.email "ershovme@gmail.com"
 git config --global user.name "mikershov94"
