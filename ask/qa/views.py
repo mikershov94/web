@@ -136,7 +136,10 @@ def login(request):
 			return response
 		else:
 			error = 'Bad login or password'
+	else:
+		form = LoginForm()
 	return render(request, 'login.html',
 		{
+		'form': form,
 		'error': error,
 		})
