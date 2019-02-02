@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from qa.models import Session
+from datetime import datetime, timedelta
 import random
 
 def do_login(login, password):
