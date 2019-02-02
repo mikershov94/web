@@ -6,10 +6,10 @@ from django.utils import timezone
 class CheckSessionMiddleware(MiddlewareMixin):
 	def process_request(self, request):
 		try:
-			sessid = request.COOKIES.get('sessid')
+			sessid = request.COOKIES.get('sessionid')
 			session = Session.objects.get(
 				session_key = sessid,
-				expire_date__gt = datetime.now(tz=timezone.utc),
+				expire_date__gt = datetime.now(),
 				)
 			request.session = session
 			request.user = session.user
