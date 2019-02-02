@@ -107,8 +107,8 @@ def user_add(request):
 	if request.method == 'POST':
 		form = SignupForm(request.POST)
 		if form.is_valid():
-			login = form.fields['username']
-			password = form.fields['password']
+			login = request.POST.get('username')
+			password = request.POST.get('password')
 			user = form.save()
 			url = request.POST.get('continue', '/')
 			sessid = do_login(login, password)
